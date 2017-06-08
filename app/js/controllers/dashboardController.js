@@ -8,7 +8,7 @@ angular.module('app')
     statistique = [];
     score = 0;
     // question = {
-    //   question: ["ici", "la", "la"],
+    //   question: ["Ceci est la question numéro 1", "2", "3"],
     //   categorie: "film"
     // };
     // QuestionService.create(question).then(function(res) {
@@ -57,9 +57,44 @@ angular.module('app')
         console.log(res.data);
       });
 
-      $scope.question = 'fini';
-
+      // $scope.question = 'fini';
+      console.log("WAZAAAAAAAAAAAAAAAAAAAAA");
+      alert("test");
+      // swal({
+      //   title: "Sweet!",
+      //   text: "Here's a custom image.",
+      //   imageUrl: "../img/yinyang.png"
+      // });
     }
+
+
+    // swal({
+    //               title: "Cette salle va être supprimée définitivement !",
+    //               text: "Confirmez-vous la suppression?",
+    //               type: "warning",
+    //               showCancelButton: true,
+    //               confirmButtonColor: "#DD6B55",
+    //               confirmButtonText: "Supprimer la salle!",
+    //               cancelButtonText: "Oops, je vais la conserver!",
+    //               closeOnConfirm: false,
+    //               closeOnCancel: false
+    //           },
+    //           function(isConfirm) {
+    //               if (isConfirm) {
+    //                   swal("Salle supprimée!", "Votre salle a été supprimé définitivement!", "success");
+    //                   SDFService.delete(sdf._id).then(function(res) {
+    //                       console.log("delete succeed");
+    //                       SDFService.getAll().then(function(res) {
+    //                           $scope.sallesDesFetes = res.data;
+    //                           console.log($scope.sallesDesFetes);
+    //                       });
+    //                   }, function(err) {
+    //                       console.log("Delete failed");
+    //                   });
+    //               } else {
+    //                   swal("Ouf!", "Votre salle a été conservé!", "error");
+    //               }
+    //           });
 
     $scope.ok = function() {
       score += 1;
