@@ -1,0 +1,15 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-xs-12">
+      <form>
+        <label>Nom: <input type="text" ng-model="user.lastname" /></label><br />
+        <label>Prénom: <input type="text" ng-model="user.firstname" /></label><br />
+        <label>E-mail: <input type="email" ng-model="user.email" /></label><br />
+        <label>Age: <input type="email" ng-model="user.age" /></label><br />
+        <label>Ville: <input type="email" ng-model="user.location" /></label><br />
+      </form>
+      <input type="submit" ng-click="update(user)" value="Save" />
+    </div>
+  </div>
+</div>
