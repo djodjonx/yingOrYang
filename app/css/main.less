@@ -2,30 +2,58 @@
 // Use `@import` to use other less files
 // relative to 'app/css' or 'vendor/css'.
 
-.register{
-  background-image: url(../img/registerbg.jpg);
+.register {
+  background-image: url("../img/registerbg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
-
   margin-top: -20px;
   margin-bottom: -50px;
 }
 
-.formBorder{
-  border: 5px red solid;
-  margin-top: 25em;
+.formBorder {
+  margin-top: 20em;
+  border: black 1px solid;
 }
 
-.center{
+.center {
   text-align: center;
 }
 
-.underline{
+.underline {
   text-decoration: underline;
 }
 
-#accroche{
+#accroche {
   background-color: white;
   opacity: 0.8;
+}
+
+.degrade {
+  // background-image: linear-gradient(to right, white, black);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,fcfcfc+24,000000+70,000000+76 */
+  background: rgb(255,255,255);
+  /* Old browsers */
+  background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(252,252,252,1) 24%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 76%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(252,252,252,1) 24%,rgba(0,0,0,1) 70%,rgba(0,0,0,1) 76%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(252,252,252,1) 24%,rgba(0,0,0,1) 70%,rgba(0,0,0,1) 76%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '#ffffff', endColorstr='#000000',GradientType=1 );
+  /* IE6-9 */
+}
+
+.degradeIn {
+  background-image: linear-gradient(to right, black, white,black);
+  color: black;
+}
+
+.yybg {
+  background-image: url("http://www.icône.com/images/icones/1/4/whitix.png");
+  height: 3em;
+  background-size: contain;
+  margin-left: 2em;
+  background-position: left;
+  background-repeat: no-repeat;
 }
