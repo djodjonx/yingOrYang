@@ -24,7 +24,9 @@ angular.module('app')
 
     function arrayObjectIndexOf(myArray, searchTerm) {
       for (var i = 0, len = myArray.length; i < len; i++) {
-        if (myArray[i].categorie === searchTerm) return i;
+        if (myArray[i].categorie === searchTerm) {
+          return i;
+        }
       }
       return -1;
     }
@@ -49,7 +51,7 @@ angular.module('app')
       return;
     }
 
-    function end (){
+    function end() {
       UserService.updateDonnee(userId, {
         score: score,
         statistique: statistique
@@ -108,7 +110,7 @@ angular.module('app')
         }
         showQuestion(questionsIndex, index);
       } else {
-      end();
+        end();
       }
 
     };
