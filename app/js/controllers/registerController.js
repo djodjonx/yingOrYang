@@ -3,7 +3,7 @@ angular.module('app')
         $scope.register = function() {
           console.log($scope.user);
             Auth.register($scope.user).then(function() {
-                $state.go('anon.home');
+                $state.go('user.test');
             });
         };
     });
