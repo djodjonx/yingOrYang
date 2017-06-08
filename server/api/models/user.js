@@ -36,11 +36,7 @@ const userSchema = new mongoose.Schema({
   lastName: String,
   location: String,
   score: Number,
-  statistique: [
-    {
-      type: String
-    }
-  ],
+  statistique: [],
   isAdmin: {
     type: Boolean,
     default: false
@@ -157,6 +153,21 @@ export default class User {
       _id: req.params.id
     }, req.body, (err, user) => {
       if (err || !user) {
+        res.status(500).send(err.message);
+      } else {
+        let tk = jsonwebtoken.sign(user, token, {expiresIn: "24h"});
+        res.json({success: true, user: user, token: tk});
+      }
+    });
+  }
+
+  updateData(req, res) {
+    console.log('ici',req.params, req.body);
+    model.update({
+      _id: req.params.id
+    },req.body,{upsert: true, new: true}, (err, user) => {
+      if (err || !user) {
+        console.log(err);
         res.status(500).send(err.message);
       } else {
         let tk = jsonwebtoken.sign(user, token, {expiresIn: "24h"});

@@ -7,7 +7,7 @@ angular.module('app')
             getOne: function(id) {
                 return $http.get('/users/' + id);
             },
-            update: function(id, donnee) {
+            updateDonnee: function(id, donnee) {
                 return $http.put('/users/' + id, donnee);
             },
             delete: function(id) {
