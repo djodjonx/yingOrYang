@@ -63,7 +63,16 @@ angular.module('app')
                     }
                 }
             })
-            
+
+            .state('user.test', {
+                url: '/test',
+                views: {
+                    'content@': {
+                        templateUrl: 'user/test.html',
+                        controller: 'DashboardController'
+                    }
+                }
+            })
             .state('user.dashboard', {
                 url: '/dashboard',
                 views: {

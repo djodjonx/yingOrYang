@@ -52,13 +52,13 @@ function filter(users,array,param,callback){
   }
 
   users.map(function(user){
-    if(user.score <= score && user.score >= score -10){
+    if(user.score <= score +10 && user.score >= score -10){
       array.push(user);
     }
       return array;
   });
   callback(array);
-};
+}
 
 userSchema.methods.comparePassword = function(pwd, cb) {
   bcrypt.compare(pwd, this.password, function(err, isMatch) {
