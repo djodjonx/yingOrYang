@@ -1,16 +1,44 @@
-<div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
-        <form class="form" name="loginForm" novalidate ng-submit="register()">
-            <div ng-repeat="error in errors">{{error.error}}</div>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input id="email" type="email" class="form-control" ng-model="user.email" required placeholder="Email Address">
-            </div>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                <input id="password" type="password" class="form-control" ng-model="user.password" required placeholder="Password">
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
-        </form>
+<div class="register">
+  <div class="container-fluid">
+    <div class="row" id="accroche">
+      <h3 class="center underline yybg">Discover'em all !</h3>
+      <p class="center">Marre de rencontrer vos sosies? Sortez de votre zone de confort, et agrandissez vos horizons, amitié ou amour, à vous de jouez !</p>
     </div>
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+        <form class="form formBorder" name="loginForm" novalidate ng-submit="register()">
+          <div ng-repeat="error in errors">{{error.error}}</div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input id="name" type="name" class="form-control degrade" ng-model="user.lastName" required placeholder="Nom">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input id="email" type="name" class="form-control degrade" ng-model="user.firstName" required placeholder="Prénom">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input id="age" type="number" class="form-control degrade" ng-model="user.age" required placeholder="Age">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+            <input id="location" type="text" class="form-control degrade" ng-model="user.location" required placeholder="Ville">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-venus-mars" aria-hidden="true"></i></span>
+            <input id="sexe" type="text" class="form-control degrade" ng-model="user.sexe" required placeholder="Sexe">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+            <input id="email" type="email" class="form-control degrade" ng-model="user.email" required placeholder="Adresse Mail">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input id="password" type="password" class="form-control degrade" ng-model="user.password" required placeholder="Mot de Passe">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block degradeIn">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
