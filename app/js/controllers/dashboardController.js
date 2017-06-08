@@ -8,7 +8,7 @@ angular.module('app')
     statistique = [];
     score = 0;
     // question = {
-    //   question: ["ici", "la", "la"],
+    //   question: ["Ceci est la question numéro 1", "2", "3"],
     //   categorie: "film"
     // };
     // QuestionService.create(question).then(function(res) {
