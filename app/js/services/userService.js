@@ -4,6 +4,9 @@ angular.module('app')
             getAll: function() {
                 return $http.get('/users');
             },
+            getAffinity: function(score) {
+                return $http.get('/users/affinity/'+score);
+            },
             getOne: function(id) {
                 return $http.get('/users/' + id);
             },
