@@ -60,13 +60,12 @@ angular.module('app')
       });
 
       // $scope.question = 'fini';
-      console.log("WAZAAAAAAAAAAAAAAAAAAAAA");
-      alert("test");
-      // swal({
-      //   title: "Sweet!",
-      //   text: "Here's a custom image.",
-      //   imageUrl: "../img/yinyang.png"
-      // });
+      $scope.score = score;
+      swal({
+        title: "!",
+        text: "Here's a custom image.",
+        imageUrl: "../img/yinyang.png"
+      });
     }
 
 
