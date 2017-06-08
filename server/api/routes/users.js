@@ -18,7 +18,7 @@ module.exports = (app) => {
 
     router.get('/affinity/:score', Auth.hasAuthorization, user.findAllByAffinity);
 
-    router.get('/:id', Auth.isAdministrator, user.findById);
+    router.get('/:id', Auth.hasAuthorization, user.findById);
 
     router.post('/', user.create);
 
