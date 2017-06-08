@@ -44,8 +44,15 @@ const userSchema = new mongoose.Schema({
 });
 
 function filter(users,array,param,callback){
+  let score = 100 - param;
+  if (score < 10){
+    score = 10;
+  }else if(score > 90){
+    score = 90;
+  }
+
   users.map(function(user){
-    if(user.score <= param +10 && user.score >= param -10){
+    if(user.score <= score && user.score >= score -10){
       array.push(user);
     }
       return array;
@@ -96,22 +103,14 @@ export default class User {
   }
 
   findAllByAffinity(req, res) {
-    let score = 100 - req.params.score;
-    if (score < 10){
-      score = 10;
-    }else if(score > 90){
-      score = 90;
 
-    }else{
-      return score;
-    }
     model.find({}, {
       password: 0
     }, (err, users) => {
       if (err || !users) {
         res.sendStatus(403);
       } else {
-        filter(users,[],score,function(data){
+        filter(users,[],req.params.score,function(data){
           res.json(data);
         })
       }
