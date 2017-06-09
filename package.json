@@ -10,7 +10,9 @@
     "production": "lineman clean build && node production.js"
   },
   "dependencies": {
+    "angular-chart.js": "^1.1.1",
     "angularjs-scroll-glue": "^2.2.0",
+    "chart.js": "^2.6.0",
     "express": "",
     "lineman": "~0.37.0",
     "lineman-angular": "^0.3.0",
