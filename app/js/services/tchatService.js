@@ -2,12 +2,11 @@ angular.module('app')
     .service('TchatService', function($http) {
         return {
 
-            write: function(user,guest,message) {
-                return $http.put('/tchats/', {users:[user,guest],message:message});
+            write: function(messages) {
+                return $http.put('/tchats/write', messages);
             },
-            read: function(user,guest) {
-              console.log(user,guest);
-                return $http.get('/tchats/' +[user,guest]);
+            read: function(users) {
+                return $http.put('/tchats/read' , users);
             }
         };
     });

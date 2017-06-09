@@ -1,2 +1,2 @@
 
-angular.module('app', ['ui.bootstrap','ui.router','ksSwiper']);
+angular.module('app', ['ui.bootstrap','ui.router','ksSwiper','luegg.directives']);

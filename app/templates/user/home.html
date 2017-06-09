@@ -17,10 +17,12 @@
         </ul>
       </div>
     </div>
-    <div class="tchatBox" ng-show="guest !== undifined">
+    <div class="tchatBox" ng-show="guest !== undefined">
       <div class="col-xs-offset-1 col-xs-4">
-        <div class="box">
-
+        <div class="box" id="box" style="overflow:scroll" scroll-glue>
+          <ul>
+            <li style="color:black" ng-repeat="message in messages track by $index">{{message.message}}</li>
+          </ul>
         </div>
         <textarea name="name" rows="3" cols="73" ng-model="message"></textarea>
         <button type="button" class="btn btn-default" ng-click="send(message)">

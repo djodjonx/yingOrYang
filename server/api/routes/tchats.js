@@ -8,10 +8,10 @@ module.exports = (app) => {
 
     var tchat = new Tchat();
 
-    router.get('/:users',  tchat.read);
+    router.put('/read',  tchat.read);
 
 
-    router.put('/',  tchat.write);
+    router.put('/write',  tchat.write);
 
     app.use('/tchats', router);
 

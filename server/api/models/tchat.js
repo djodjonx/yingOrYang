@@ -1,15 +1,14 @@
 import mongoose from 'mongoose';
 
 const tchatSchema = new mongoose.Schema({
-  users: [],
-  messages: []
+  send: String,
+  read: String,
+  message: String,
+  date:{type: Date, default: Date.now}
+
 
 });
 
-
-function compare(a, b) {
-  return a - b;
-}
 
 
 let model = mongoose.model('Tchat', tchatSchema);
@@ -18,43 +17,44 @@ export default class Tchat {
 
 
   read(req, res) {
-    let users = [];
-    users.push(req.params.users);
-    console.log(users);
-    if(req.params.users !== undefined){
-      users = users.sort(compare());
-    }
-    model.findOne({
-      users: users
-    }, {
-      password: 0
-    }, (err, tchat) => {
-      if (err || !tchat) {
-        res.sendStatus(403);
+
+    model.find({
+      $or: [{
+        send: req.body.user1,read:req.body.user2
+      }, {
+        send: req.body.user2,read:req.body.user1
+      }]
+    }, (err, tchats) => {
+      if (err) {
+        res.sendStatus(404);
       } else {
-        res.json(tchat);
+        res.json(tchats);
       }
     });
   }
 
 
   write(req, res) {
-    let users = req.body.users.sort(compare());
-    model.update({
-      users: users
-    }, req.body, {
-      upsert: true,
-      new: true
-    },(err, tchat) => {
-      if (err) {
-        res.status(500).send(err.message);
-      } else {
-        res.json({
-          success: true,
-          tchat: tchat
+        model.create(req.body, (err, tchat) => {
+          if (err) {
+            res.sendStatus(500);
+          } else {
+            model.find({
+              $or: [{
+                send: req.body.send,read:req.body.read
+              }, {
+                send: req.body.read,read:req.body.send
+              }]
+            }, (err, tchats) => {
+              if (err) {
+                res.sendStatus(404);
+              } else {
+                res.json(tchats);
+              }
+            });
+          }
         });
-      }
-    });
+
   }
 
   delete(req, res) {
