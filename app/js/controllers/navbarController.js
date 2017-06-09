@@ -6,5 +6,6 @@ angular.module('app')
 
         $scope.logout = function() {
             Auth.logout();
+            $state.go('anon.login');
         };
     });
