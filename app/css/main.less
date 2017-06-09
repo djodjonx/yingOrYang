@@ -1,6 +1,14 @@
 // Main less file for your application.
 // Use `@import` to use other less files
 // relative to 'app/css' or 'vendor/css'.
+
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+@font-face {
+  font-family: 'pacifico';
+  src: url('/fonts/Pacifico.ttf');
+}
+
 .navbar-default {
   background-color:black;
   background-image: none;
@@ -19,7 +27,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
-    margin-top: -20px;
+  margin-top: -20px;
   margin-bottom: -50px;
 }
 
@@ -100,7 +108,17 @@
   height: 10em;
   width: 10em;
   border-radius: 10em;
-  margin-top: 20px;
+  margin-top: 60px;
+}
+
+.navbar-brand{
+  margin-top:-10px;
+}
+
+h2{
+  margin-right: 800px;
+  margin-top: 5px;
+  font-family: 'pacifico';
 }
 
 .userList{
@@ -108,7 +126,7 @@
 }
 .user{
   margin-top: 40px;
-  height: 200px;
+  height: 250px;
   background-color: rgba(0,0,0,0.4)
 }
 .boxImg{
@@ -144,9 +162,21 @@
 
 .box{
   margin-top: 20px;
-    height: 200px;
-    background-color: rgba(255,255,255,0.85);
+    height: 300px;
+    background-color: rgba(0,0,0,0.85);
 }
+#pie{
+  width: 200px;
+  height: 200px;
+}
+canvas{
+  color:white;
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 100px;
+  margin-top: 0px;
+
+}
+
 
 ul .guestList li{
   display: inline;
@@ -155,16 +185,22 @@ ul .guestList li{
 ul li{
   list-style: none;
   color:white;
-  text-align: center;
+  // text-align: center;
+}
+
+.right{
+  text-align: right;
+}
+
+.left{
+  text-align: left;
 }
 
 
-
-
-
 .guestSection{
+  position: fixed;
+  bottom: 0;
   background-color: rgba(255,255,255,0.8);
-  margin-top: 400px;
   height: 200px;
 }
 
