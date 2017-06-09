@@ -55,7 +55,7 @@ angular.module('app')
                 }
             })
             .state('user.home', {
-                url: '/',
+                url: '/home',
                 views: {
                     'content@': {
                         templateUrl: 'user/home.html',
@@ -73,6 +73,7 @@ angular.module('app')
                     }
                 }
             })
+  
             .state('user.dashboard', {
                 url: '/dashboard',
                 views: {

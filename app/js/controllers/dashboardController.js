@@ -1,5 +1,5 @@
 angular.module('app')
-  .controller('DashboardController', function($scope, CurrentUser, UserService, QuestionService) {
+  .controller('DashboardController', function($scope, CurrentUser, UserService, QuestionService, $state) {
     var userId = CurrentUser.user()._id;
     resultat = 0;
     questions = {};
@@ -60,42 +60,42 @@ angular.module('app')
       });
 
       // $scope.question = 'fini';
-      $scope.score = score;
-      swal({
-        title: "!",
-        text: "Here's a custom image.",
-        imageUrl: "../img/yinyang.png"
-      });
+      // $scope.score = score;
+      $scope.score = 50;
+      if ($scope.score > 50) {
+        swal({
+          title: "Bravo !",
+          text: "Vous appartenez au Yin ! Nous allons pouvoir vous matcher !",
+          imageUrl: "../img/yinyang.png",
+          customClass: "changeBgModal",
+          confirmButtonText: "Tacitement, GO !",
+          confirmButtonColor: "white"
+        });
+      }
+      if ($scope.score < 50) {
+        swal({
+          title: "Bravo !",
+          text: "Vous appartenez au Yang, nous allons pouvoir vous matcher !",
+          imageUrl: "../img/yinyang.png",
+          confirmButtonText: "Tacitement, GO !",
+          confirmButtonColor: "white"
+        });
+      }
+      if ($scope.score == 50) {
+        swal({
+          title: "Incroyable !",
+          text: "Vous êtes à l'équilibre du Yin et du Yang, nous allons pouvoir vous matcher !",
+          imageUrl: "../img/yinyang.png",
+          customClass: "gradientModal",
+          confirmButtonText: "Tacitement, GO !",
+          confirmButtonColor: "white"
+        }, function(isConfirm) {
+          if (isConfirm) {
+            $state.go('user.home');
+          }
+        });
+      }
     }
-
-
-    // swal({
-    //               title: "Cette salle va être supprimée définitivement !",
-    //               text: "Confirmez-vous la suppression?",
-    //               type: "warning",
-    //               showCancelButton: true,
-    //               confirmButtonColor: "#DD6B55",
-    //               confirmButtonText: "Supprimer la salle!",
-    //               cancelButtonText: "Oops, je vais la conserver!",
-    //               closeOnConfirm: false,
-    //               closeOnCancel: false
-    //           },
-    //           function(isConfirm) {
-    //               if (isConfirm) {
-    //                   swal("Salle supprimée!", "Votre salle a été supprimé définitivement!", "success");
-    //                   SDFService.delete(sdf._id).then(function(res) {
-    //                       console.log("delete succeed");
-    //                       SDFService.getAll().then(function(res) {
-    //                           $scope.sallesDesFetes = res.data;
-    //                           console.log($scope.sallesDesFetes);
-    //                       });
-    //                   }, function(err) {
-    //                       console.log("Delete failed");
-    //                   });
-    //               } else {
-    //                   swal("Ouf!", "Votre salle a été conservé!", "error");
-    //               }
-    //           });
 
     $scope.ok = function() {
       score += 1;
