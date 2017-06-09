@@ -1,0 +1,120 @@
+{
+  "categorie": "Sexe",
+  "question": [
+    "Avez-vous déjà fait l'amour?",
+    "1 seule fois?",
+    "Entre 2 et 10 fois?",
+    "Plus de 11 fois ?"
+  ]
+},
+
+{
+  "categorie": "Sexe",
+  "question": [
+    "Avez-vous déjà eu plusieurs partenaires en peu de temps ?",
+    "2 en 1 semaine?",
+    "3 en 1 jour ?",
+    "plus ?"
+  ]
+}, {
+  "categorie": "Sexe",
+  "question": [
+    "Aimez-vous les préliminaires?",
+    "Quelques caresses avant l'abordage?",
+    "Sexe oral parfois, faire plaisir ça fait plaisir",
+    "La totale, à chaque fois!"
+  ]
+}, {
+  "categorie": "Sexe",
+  "question": [
+    "Avez-vous déjà eu l'occasion de tester davantage que demandé précédemment?",
+    "  Prendre la porte arrière, c'est pas forcément pour la discrétion",
+    "  Le BDSM, soft ou hard, c'est comme un whisky, ça peut s'apprécier avec le temps",
+    "  Fétichisme, de quelconque nature?"
+  ]
+}, {
+  "categorie": "Sexe",
+  "question": [
+    "  Avez-vous déjà utiliser des sex toys, ou de la nourriture?",
+    "  Relation sexuelle à l'encontre de votre orientation sexuelle?",
+    "  La double pene, c'est pas des pâtes.",
+    "Avez-vous déjà eu des relation sexuelles à plus de 2 ?"
+  ]
+},
+
+{
+  "categorie": "Alcool",
+  "question": [
+    "Buvez-vous de l'alcool?",
+    "Occasionnellement un verre",
+    "En soirée, je gère le lever de coude",
+    "Très régulièrement, mais jamais seul (quoique..)"
+  ]
+},
+
+{
+  "categorie": "Alcool",
+  "question": [
+    "Avez-vous déjà mal fini à cause de l'alcool",
+    "Un bon mal de crâne.. #Doliprane",
+    "Vomir, parfois ça aide..",
+    "Coma éthylique, pas fait dans la demie-mesure"
+  ]
+},
+
+{
+  "categorie": "Alcool",
+  "question": [
+    "Avez-vous déjà fait des jeux d'alcool?",
+    "Ca m'est arrivé, plus d'une fois !",
+    "Je suis un as, je domine le game",
+    "Les jeux je les fait maison, là au moins il y a du challenge"
+  ]
+},
+
+{
+  "categorie": "Alcool",
+  "question": [
+    "L'alcool vous a t'il déjà aidé? (déshinibition, séduction..)",
+    "Un peu alcoolisé(e), je suis plus en joie!",
+    "Je suis plus ouvert à la séduction/plus entreprenant(e)",
+    "Bourré, je choppe n'importe quoi."
+  ]
+},
+
+{
+  "categorie": "Drogue",
+  "question": [
+    "Avez-vous déjà consommé de la drogue?",
+    "On m'a déjà fait essayer quelques fois.",
+    "Dès qu'on me propose",
+    "J'achète, je consomme"
+  ]
+},
+
+{
+  "categorie": "Drogue",
+  "question": [
+    "Je connais la weed et le shit, les bases.",
+    "De la MD ou des champis?",
+    "Rails de coke et taz pour un aller sans retour?"
+  ]
+},
+{
+  "categorie": "Drogue",
+  "question": [
+    "Avez-vous déjà vendu de la drogue",
+    "Je fais dans la revente, petit benef, conso gratuite",
+    "Je fais pousser, Alice au pays des merveilles se ballade dans mon jardin !"
+  ]
+},
+{
+  "categorie": "Violence",
+  "question": [
+    "Avez-vous des pulsions aggressives?",
+    "Ca m'arrive de m'énerver, rien de bien méchant..",
+    "Peu de choses m'atteignent, mais faut pas trop me chercher..",
+    "Toutes les raisons sont bonnes pour se mettre sur la gueule !"
+
+  ]
+}
