@@ -44,7 +44,7 @@ const userSchema = new mongoose.Schema({
 });
 
 function filter(users,array,param,callback){
-  let score = 100 - param;
+  let score = 100-param;
   if (score < 10){
     score = 10;
   }else if(score > 90){
@@ -112,7 +112,7 @@ export default class User {
       } else {
         filter(users,[],req.params.score,function(data){
           res.json(data);
-        })
+        });
       }
     });
   }

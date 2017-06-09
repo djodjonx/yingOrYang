@@ -26,7 +26,7 @@
 
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-camera" aria-hidden="true"></i></span>
-            <input id="urlProfilePic" type="url" class="form-control degrade" ng-model="user.url" required placeholder="Url:photo de profil">
+            <input id="urlProfilePic" type="text" class="form-control degrade" ng-model="user.avatar" required placeholder="Url:photo de profil">
             <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
             <input id="location" type="text" class="form-control degrade" ng-model="user.location" required placeholder="Ville">
           </div>
@@ -50,7 +50,8 @@
             </select>
           </div>
           <div class="col-xs-12 virginBox"></div>
-          <button type="submit" class="btn btn-block degradeIn">Register</button>
+          <button type="submit" class="btn btn-block degradeIn">Enregistrement</button>
+          <a ui-sref="anon.login" style="color:black;text-align:center"><b>Déjà inscrit?</b></a>
         </form>
       </div>
     </div>

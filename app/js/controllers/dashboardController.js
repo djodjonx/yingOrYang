@@ -7,13 +7,7 @@ angular.module('app')
     questionsIndex = 0;
     statistique = [];
     score = 0;
-    // question = {
-    //   question: ["Ceci est la question numéro 1", "2", "3"],
-    //   categorie: "film"
-    // };
-    // QuestionService.create(question).then(function(res) {
-    //   console.log(res.data);
-    // });
+
 
     $scope.question = "";
 
@@ -59,9 +53,8 @@ angular.module('app')
         console.log(res.data);
       });
 
-      // $scope.question = 'fini';
-      // $scope.score = score;
-      $scope.score = 50;
+      $scope.score = score;
+
       if ($scope.score > 50) {
         swal({
           title: "Bravo !",
@@ -70,6 +63,10 @@ angular.module('app')
           customClass: "changeBgModal",
           confirmButtonText: "Tacitement, GO !",
           confirmButtonColor: "white"
+        }, function(isConfirm) {
+          if (isConfirm) {
+            $state.go('user.home');
+          }
         });
       }
       if ($scope.score < 50) {
@@ -79,6 +76,10 @@ angular.module('app')
           imageUrl: "../img/yinyang.png",
           confirmButtonText: "Tacitement, GO !",
           confirmButtonColor: "white"
+        }, function(isConfirm) {
+          if (isConfirm) {
+            $state.go('user.home');
+          }
         });
       }
       if ($scope.score == 50) {
@@ -98,6 +99,9 @@ angular.module('app')
     }
 
     $scope.ok = function() {
+      if (index === 0) {
+        score += 2;
+      }
       score += 1;
       state(1, statistique);
       if (questionsIndex < questions.length - 1) {
