@@ -1,23 +1,28 @@
-<div class="register">
+<div class="register" style="overflow-y: hidden;">
   <div class="container-fluid">
     <div class="row" id="accroche">
       <h3 class="center underline yybg">Discover'em all !</h3>
       <p class="center">Marre de rencontrer vos sosies? Sortez de votre zone de confort, et agrandissez vos horizons, amitié ou amour, à vous de jouez !</p>
     </div>
     <div class="row">
-      <div class="col-xs-6 col-xs-offset-3">
-        <form class="form formBorder" name="loginForm" novalidate ng-submit="login()">
-          <div ng-repeat="error in errors">{{error.error}}</div>
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="email" type="email" class="form-control degrade" ng-model="user.email" required placeholder="Email Address">
-          </div>
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input id="password" type="password" class="form-control degrade" ng-model="user.password" required placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-block degradeIn">Login</button>
-        </form>
+      <div class="container" id="modalLogin">
+
+        <div class="col-xs-4 col-xs-offset-4">
+          <form class="form formBorder" name="loginForm" novalidate ng-submit="login()">
+            <div ng-repeat="error in errors">{{error.error}}</div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="email" type="email" class="form-control degrade" ng-model="user.email" required placeholder="Email Address">
+            </div>
+            <div class="col-xs-12 virginBox"></div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="password" type="password" class="form-control degrade" ng-model="user.password" required placeholder="Password">
+            </div>
+            <div class="col-xs-12 virginBox"></div>
+            <button type="submit" class="btn btn-block degradeIn">Login</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
