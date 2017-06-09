@@ -1,85 +1,66 @@
 <div class="container-fluid home">
 
-  <div class="row userSection">
-    <div class="user" ng-show="user.score < 40">
-      <div class="col-xs-offset-1 col-xs-2 ">
-        <img class="image" src="./img/onizuka.jpg" alt="">
+  <div class="row ">
+    <div class="userSection">
+      <div class="col-xs-1 user ">
+        <img class="imageUser" ng-src="{{user.avatar}}" alt="">
       </div>
+        <div class="col-xs-2 user">
+
+        <ul class="userList">
+          <li><b>{{user.pseudo}}</b></li>
+          <li><b>Your's score: </b>{{user.score}}</li>
+        </ul>
+        <ul>
+          <li><b>statistique:</b></li>
+          <li ng-repeat="state in user.statistique"><b>{{state.categorie}}:</b> {{state.score}}Pts</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tchatBox" ng-show="guest !== undifined">
       <div class="col-xs-offset-1 col-xs-4">
-        <ul>
-          <li><b>{{user.pseudo}}</b></li>
-          <li><b>Your's score: </b>{{user.score}}</li>
+        <div class="box">
+
+        </div>
+        <textarea name="name" rows="3" cols="73" ng-model="message"></textarea>
+        <button type="button" class="btn btn-default" ng-click="send(message)">
+          envoie
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="guestUserSection" ng-show="guest !== undifined">
+      <div class="col-xs-offset-1 col-xs-2 user ">
+        <ul class="userList">
+          <li><b>{{guest.pseudo}}</b></li>
+          <li><b>score: </b>{{guest.score}}</li>
         </ul>
-        <b>statistique:</b>
         <ul>
-          <li ng-repeat="state in user.statistique"><b>{{state.categorie}}:</b> {{state.score}} Points</li>
+          <li><b>statistique:</b></li>
+          <li ng-repeat="state in guest.statistique"><b>{{state.categorie}}:</b> {{state.score}}Pts</li>
         </ul>
+      </div>
+        <div class="col-xs-1 user guestSide">
+          <img class="imageUser" ng-src="{{guest.avatar}}" alt="">
       </div>
     </div>
-    <div class="user" ng-show="user.score > 40 && user.score < 60 ">
-      <div class="col-xs-offset-5 col-xs-4 ">
-        <img class="image" src="./img/onizuka.jpg" alt="">
+
+      <div>
+        <div class="col-xs-12 guestSection">
+          <ks-swiper-container swiper="swiper" slides-per-view="10" space-between="0">
+    <ks-swiper-slide class="swiper-slide" ng-repeat="guest in guests track by $index" >
+      <div class="boxImg" ng-click="toGuest(guest)">
+        <img class="imageGuest" ng-src="{{guest.avatar}}">
       </div>
-      <div class="col-xs-offset-1 col-xs-4">
-        <ul>
-          <li><b>{{user.pseudo}}</b></li>
-          <li><b>Your's score: </b>{{user.score}}</li>
-        </ul>
-        <b>statistique:</b>
-        <ul>
-          <li ng-repeat="state in user.statistique"><b>{{state.categorie}}:</b> {{state.score}} Points</li>
-        </ul>
-      </div>
-    </div>
-    <div class="user" ng-show="user.score > 60">
-      <div class="col-xs-offset-6 col-xs-2">
-        <ul>
-          <li><b>{{user.pseudo}}</b></li>
-          <li><b>Your's score: </b>{{user.score}}</li>
-        </ul>
-        <b>statistique:</b>
-        <ul>
-          <li ng-repeat="state in user.statistique"><b>{{state.categorie}}:</b> {{state.score}} Points</li>
-        </ul>
-      </div>
-      <div class=" col-xs-2 ">
-        <img class="image" src="./img/onizuka.jpg" alt="">
+      <p>{{guest.score}}</p>
+    </ks-swiper-slide>
+</ks-swiper-container>
+
+        </div>
+
       </div>
     </div>
+
   </div>
-
-
-  <div class="row guestSection">
-    <div class="col-xs-offset-2 col-xs-2">
-      <div class="guests" ng-show="guest.score > 40 && guest.score < 60">
-        <ul>
-          <li ng-repeat="guest in guests"><img class="image" src="./img/onizuka.jpg" alt="">
-            <p>{{guest.pseudo}}</p>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-xs-offset-5 col-xs-4 ">
-      <div class="guests" ng-show="guest.score < 40">
-        <ul>
-          <ul>
-            <li ng-repeat="guest in guests"><img class="image" src="./img/onizuka.jpg" alt="">
-              <p>{{guest.pseudo}}</p>
-            </li>
-          </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-xs-offset-9 col-xs-2 ">
-      <div class="guests" ng-repeat="guest in guests">
-        <img class="image" src="./img/bitch.jpg" alt="">
-        <p>{{guest.pseudo}}</p>
-      </div>
-    </div>
-  </div>
-
-
-
-</div>
-</div>
